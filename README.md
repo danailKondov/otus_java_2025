@@ -1,2 +1,5 @@
-# otus_java_2025
-курс "Java Developer. Professional" 2025
+# Курс "Java Developer. Professional" (2025-02)
+
+Кондов Д.Ж.
+
+dkondov@yandex.ru
