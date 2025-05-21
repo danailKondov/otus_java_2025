@@ -7,6 +7,7 @@ include("hw05-aop")
 include("hw06-atm")
 include("hw07-patterns")
 include("hw08-io")
+include("hw09-jdbc")
 
 
 pluginManagement {
