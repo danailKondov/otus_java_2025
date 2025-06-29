@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  db-otus:
+    image: postgres:13.7-alpine
+    container_name: db_otus
+    ports:
+      - "5430:5432"
+    environment:
+      - POSTGRES_DB=demoDB
+      - POSTGRES_USER=usr
+      - POSTGRES_PASSWORD=pwd
+      - TZ=Europe/Moscow
