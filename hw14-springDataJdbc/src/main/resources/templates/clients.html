@@ -1,0 +1,58 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Клиенты</title>
+    <link th:href="@{templates/style.css}" rel="stylesheet" />
+</head>
+
+<body>
+<div class="top">
+    <h4>Создать клиента</h4>
+    <form th:object="${formData}"
+          th:action="@{/clients/create}"
+          method="post">
+        <label for="name"> Имя:</label>
+        <input id="name"
+               type="text"
+               name="name"
+               th:field="*{name}">
+        <label for="street">Адрес:</label>
+        <input id="street"
+               type="text"
+               name="street"
+               th:field="*{address}">
+        <label for="phones">Телефоны (добавить через ","):</label>
+        <input id="phones"
+               type="text"
+               name="phones"
+               th:field="*{phoneNumbers}">
+        <button type="submit">Создать клиента</button>
+    </form>
+</div>
+<br/>
+
+<h4>Список клиентов</h4>
+<table style="width: 700px" class="clients">
+    <thead>
+    <tr>
+        <td>Id</td>
+        <td>Имя</td>
+        <td>Адрес</td>
+        <td>Телефоны</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="client : ${clients}">
+        <td th:text="${client.id}"></td>
+        <td th:text="${client.name}"></td>
+        <td th:text="${client.address}"></td>
+        <td>
+                <span th:each="phone : ${client.phoneNumbers}">
+                    <div th:text="${phone.number}"></div>
+                </span>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
