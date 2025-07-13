@@ -12,6 +12,7 @@ include("hw10-jpql")
 include("hw11-cache")
 include("hw12-web")
 include("hw13-di")
+include("hw14-springDataJdbc")
 
 
 pluginManagement {
